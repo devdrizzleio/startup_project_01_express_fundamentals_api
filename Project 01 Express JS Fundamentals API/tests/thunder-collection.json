@@ -1,0 +1,104 @@
+{
+  "client": "Thunder Client",
+  "collectionName": "Express Fundamentals API",
+  "collectionId": "express-fundamentals-v1",
+  "environmentName": "Development",
+  "requests": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "url": "{{BASE_URL}}/health",
+        "headers": [],
+        "body": {}
+      }
+    },
+    {
+      "name": "Get All Items",
+      "request": {
+        "method": "GET",
+        "url": "{{BASE_URL}}/api/items",
+        "headers": []
+      }
+    },
+    {
+      "name": "Create Item",
+      "request": {
+        "method": "POST",
+        "url": "{{BASE_URL}}/api/items",
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "type": "json",
+          "raw": "{\n  \"name\": \"New Item\",\n  \"description\": \"This is a new item created via Thunder Client\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Get Item By ID",
+      "request": {
+        "method": "GET",
+        "url": "{{BASE_URL}}/api/items/1",
+        "headers": []
+      }
+    },
+    {
+      "name": "Update Item",
+      "request": {
+        "method": "PUT",
+        "url": "{{BASE_URL}}/api/items/1",
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "type": "json",
+          "raw": "{\n  \"name\": \"Updated Item Name\",\n  \"description\": \"Updated description\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Delete Item",
+      "request": {
+        "method": "DELETE",
+        "url": "{{BASE_URL}}/api/items/1",
+        "headers": []
+      }
+    },
+    {
+      "name": "Validation Test - Create without name",
+      "request": {
+        "method": "POST",
+        "url": "{{BASE_URL}}/api/items",
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "type": "json",
+          "raw": "{\n  \"description\": \"Missing name\"\n}"
+        }
+      }
+    }
+  ],
+  "environments": [
+    {
+      "name": "Development",
+      "values": [
+        {
+          "name": "BASE_URL",
+          "value": "http://localhost:3000",
+          "isEnabled": true
+        }
+      ]
+    }
+  ]
+}
